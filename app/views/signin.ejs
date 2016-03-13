@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+
+		<!--load bootstrap-->
+		<link rel="stylesheet" type="text/css" href="/lib/bootstrap/paper_theme/bootstrap.min.css">
+		<!-- load font awesome-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+
+		<!-- site css-->
+		<link rel="stylesheet" type="text/css" href="css/site.css">
+
+	</head>
+	<body>
+		<div id="signin_container">
+			<div id="header_site" class="container-fluid">
+				<div class="row">
+					<div class="col-sm-4 col-md-4 col-lg-4">
+
+						<h5>Coins: 0
+						</h5>
+					</div>
+					<div class="col-sm-4 col-md-4 col-lg-4">
+						<a href="/"><h1 id="logo">MATH C<span class="gold_text">O</span>INS</h1></a>
+
+					</div>
+					<div class="col-sm-4 col-md-4 col-lg-4">
+							<a href="/signup" class="btn btn-primary btn-sm  candalFont">Signup</a>
+					</div>
+				</div>
+			</div>
+
+			<div id="signin_body" class="container">
+				<div class="row">
+					<div class="col-md-4">
+					</div>
+					<div class="col-md-4">
+						<div class="form_container">
+							<% for(var i in messages) { %>
+								<div class="flash"><%= messages[i] %></div>
+							<% } %>
+							<form action="/signin" method="post" role="form">
+								<h5>Sign in</h5>
+								<div class="form-group">
+
+									<input type="text" name="username" class="form-control" id="username" placeholder="Username"/>
+								</div>
+								<div class="form-group">
+
+									<input type="password" name="password" class="form-control" id="password" placeholder="Password"/>
+								</div>
+								<div class="form-group" style="display: block;">
+									<input type="submit" name="Sign-In" class="btn btn-success btn-block" value="Sign In"/>
+								</div>
+							</form>
+
+							<p>Or</p>
+							<a href="/oauth/facebook" class="btn btn-primary btn-block">Sign in with Facebook</a>
+						</div>
+
+					</div>
+					<div class="col-md-4">
+					</div>
+				</div>
+
+
+			</div>
+		</div><!--end signin_container-->
+
+
+
+
+
+
+		<!--include angularJS-->
+	<script type="text/javascript" src="/lib/angular/angular.js"></script>
+	<!--include angular route module-->
+	<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+	<!--include angularJS resource module-->
+	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+
+	<!--include jQuery-->
+	<script type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+	<!--include bootstrap-->
+	<script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+
+
+	<!--include the questions module-->
+	<script type="text/javascript" src="/questions/questions.client.module.js"></script>
+	<!--include the questions controllers-->
+	<script type="text/javascript" src="/questions/controllers/questions.client.controller.js"></script>
+	<!--include the questions services-->
+	<script type="text/javascript" src="/questions/services/questions.client.service.js"></script>
+	<!--include the questions routes configuration-->
+	<script type="text/javascript" src="/questions/config/questions.client.routes.js"></script>
+
+
+	<!--include the articles module-->
+	<script type="text/javascript" src="/articles/articles.client.module.js"></script>
+	<!--include the articles controllers-->
+	<script type="text/javascript" src="/articles/controllers/articles.client.controller.js"></script>
+	<!--include the articles services-->
+	<script type="text/javascript" src="/articles/services/articles.client.service.js"></script>
+	<!--include the articles routes configuration-->
+	<script type="text/javascript" src="/articles/config/articles.client.routes.js"></script>
+
+
+
+	<!-- include index module -->
+	<script type="text/javascript" src="/index/index.client.module.js"></script>
+	<!-- include index module controller-->
+	<script type="text/javascript" src="/index/controllers/index.client.controller.js"></script>
+	<!-- include index module routes configuration-->
+	<script type="text/javascript" src="/index/config/index.client.routes.js"></script>
+
+	<!-- include quiz module -->
+	<script type="text/javascript" src="/quiz/quiz.client.module.js"></script>
+	<!-- include quiz module controller-->
+	<script type="text/javascript" src="/quiz/controllers/quiz.client.controller.js"></script>
+	<!-- include quiz module routes configuration-->
+	<script type="text/javascript" src="/quiz/config/quiz.client.routes.js"></script>
+	<!-- include quiz module services-->
+	<script type="text/javascript" src="/quiz/services/quizFactory.client.service.js"></script>
+
+
+	<!--include the user module-->
+	<script type="text/javascript" src="/users/users.client.module.js"></script>
+	<script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
+
+	<!-- include angular application -->
+	<script type="text/javascript" src="/application.js"></script>
+
+	</body>
+</html>

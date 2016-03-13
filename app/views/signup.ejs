@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<!--load bootstrap-->
+		<link rel="stylesheet" type="text/css" href="/lib/bootstrap/paper_theme/bootstrap.min.css">
+		<!-- load font awesome-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+
+		<!-- site css-->
+		<link rel="stylesheet" type="text/css" href="css/site.css">
+	</head>
+	<body>
+		<div id="signup_container">
+			<div id="header_site" class="container-fluid">
+				<div class="row">
+					<div class="col-sm-4 col-md-4 col-lg-4">
+
+						<h5>Coins: 0
+						</h5>
+					</div>
+					<div class="col-sm-4 col-md-4 col-lg-4">
+						<a href="/"><h1 id="logo">MATH C<span class="gold_text">O</span>INS</h1></a>
+
+					</div>
+					<div class="col-sm-4 col-md-4 col-lg-4">
+							<a href="/signin" class="btn btn-success btn-sm  candalFont">Signin</a>
+					</div>
+				</div>
+			</div>
+
+			<div id="signup_body" class="container">
+				<div class="row">
+					<div class="col-md-4">
+					</div>
+					<div class="col-md-4">
+						<div class="form_container">
+							<% for(var i in messages) { %>
+								<div class="flash"><%= messages[i] %></div>
+							<% } %>
+
+							<form action="/signup" method="post" role="form">
+								<h5>Sign up</h5>
+
+								<div class="form-group">
+
+									<input type="text" name="firstName" class="form-control" id="firstName" placeholder="First Name"/>
+								</div>
+								<div class="form-group">
+
+									<input type="text" name="lastName" class="form-control" id="lastName" placeholder="Last Name">
+								</div>
+								<div class="form-group">
+
+									<input type="text" name="email" class="form-control" id="email" placeholder="Email"/>
+								</div>
+								<div class="form-group">
+
+									<input type="text" name="username" class="form-control" id="username" placeholder="Username"/>
+								</div>
+								<div class="form-group">
+
+									<input type="password" name="password" class="form-control" id="password" placeholder="Password"/>
+								</div>
+								<div class="form-group">
+									<input type="submit" name="Sign up" class="btn btn-warning btn-block" value="Sign Up"/>
+								</div>
+							</form>
+							<p>Or</p>
+							<a href="/oauth/facebook" class="btn btn-primary btn-block">Sign in with Facebook</a>
+						</div>
+
+					</div>
+					<div class="col-md-4">
+					</div>
+				</div>
+
+
+			</div>
+		</div><!--end signup_container-->
+
+
+	</body>
+</html>

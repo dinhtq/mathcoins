@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+
+		<!--load bootstrap-->
+		<link rel="stylesheet" type="text/css" href="/lib/bootstrap/paper_theme/bootstrap.min.css">
+		<!-- load font awesome-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+		<!-- site css-->
+		<link rel="stylesheet" type="text/css" href="css/site.css">
+
+
+	</head>
+	<body>
+
+
+
+		<section ng-view>
+		</section>
+
+		<script type="text/javascript">
+			window.user = <%- user || 'null' %>;
+		</script>
+
+
+		<!--include angularJS-->
+	<script type="text/javascript" src="/lib/angular/angular.js"></script>
+	<!--include angular route module-->
+	<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+	<!--include angularJS resource module-->
+	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+
+	<!--include jQuery-->
+	<script type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+	<!--include bootstrap-->
+	<script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+
+
+	<!--include the questions module-->
+	<script type="text/javascript" src="/questions/questions.client.module.js"></script>
+	<!--include the questions controllers-->
+	<script type="text/javascript" src="/questions/controllers/questions.client.controller.js"></script>
+	<!--include the questions services-->
+	<script type="text/javascript" src="/questions/services/questions.client.service.js"></script>
+	<!--include the questions routes configuration-->
+	<script type="text/javascript" src="/questions/config/questions.client.routes.js"></script>
+
+
+	<!--include the articles module-->
+	<script type="text/javascript" src="/articles/articles.client.module.js"></script>
+	<!--include the articles controllers-->
+	<script type="text/javascript" src="/articles/controllers/articles.client.controller.js"></script>
+	<!--include the articles services-->
+	<script type="text/javascript" src="/articles/services/articles.client.service.js"></script>
+	<!--include the articles routes configuration-->
+	<script type="text/javascript" src="/articles/config/articles.client.routes.js"></script>
+
+
+
+	<!-- include index module -->
+	<script type="text/javascript" src="/index/index.client.module.js"></script>
+	<!-- include index module controller-->
+	<script type="text/javascript" src="/index/controllers/index.client.controller.js"></script>
+	<!-- include index module routes configuration-->
+	<script type="text/javascript" src="/index/config/index.client.routes.js"></script>
+
+	<!-- include user module -->
+	<script type="text/javascript" src="/users/users.client.module.js"></script>
+	<script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
+
+	<!-- include quiz module -->
+	<script type="text/javascript" src="/quiz/quiz.client.module.js"></script>
+	<!-- include quiz module controller-->
+	<script type="text/javascript" src="/quiz/controllers/quiz.client.controller.js"></script>
+	<!-- include quiz module routes configuration-->
+	<script type="text/javascript" src="/quiz/config/quiz.client.routes.js"></script>
+	<!-- include quiz module services-->
+	<script type="text/javascript" src="/quiz/services/quizFactory.client.service.js"></script>
+	<script type="text/javascript" src="/quiz/services/userScoresFactory.client.service.js"></script>
+
+	<!-- load custom filters module-->
+	<script type="text/javascript" src="/customFilters/customFilter.client.module.js"></script>
+
+
+	<!-- include angular application ( bootstrapping AngularJS)-->
+	<script type="text/javascript" src="/application.js"></script>
+	</body>
+</html>

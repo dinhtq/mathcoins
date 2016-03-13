@@ -1,0 +1,103 @@
+<!-- if quiz has not started -->
+<div class="intro" ng-show="!inProgress">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+      <h3><span data-ng-bind="challenge | uppercase "></span>&nbsp;CHALLENGE!</h3>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+      <p>
+        Answer questions correctly<br> and earn Math Coins!
+      </p>
+      <button id="startQuiz" ng-click="start()" class="btn btn-success btn-lg">Start</button>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div><!--end row-->
+  <div class="row" data-ng-show="!authentication.user">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+      <div class="alert alert-dismissible alert-warning">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        Warning! Playing as a guest will not earn you any Math Coins.<br>
+        <a href="/signup" class="alert-link">Sign up</a> to start earning Math Coins now!
+      </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div><!--end row-->
+
+</div>
+
+<!-- if quiz started-->
+<div class="quiz-area" ng-show="inProgress">
+  <div ng-show="!quizOver">
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+        <div id="challenge_meta">
+          <span>Question {{ id + 1 }} of {{ numberOfQuestions }}</span><span>Score: {{ score }}</span>
+        </div>
+        <div id="challenge_main">
+
+
+          <form>
+            <h2 id="question">{{ question }}</h2>
+            <div id="options-area" class="form-group">
+              <div class="radio">
+
+                  <div ng-repeat="option in options">
+                    <label>
+                      <input type="radio" name="answer" value="{{ option }}">
+                      {{ option }}
+                    </label>
+                  </div>
+
+              </div>
+            </div>
+
+          </form>
+
+          <button ng-click="checkAnswer()" ng-show="answerMode" class="btn btn-warning">Submit</button>
+          <button ng-show="!answerMode" ng-click="nextQuestion()" class="btn btn-success next-question">Next</button>
+            <div id="answerStatus" ng-show="!answerMode">
+
+              <span ng-show="correctAns">That is correct!</span>
+              <span ng-show="!correctAns">Sorry, that is an incorrect answer.</span>
+            </div>
+
+        </div>
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div><!--end row-->
+
+
+  </div><!--end !quizOver-->
+
+  <div id="quizOver" ng-show="quizOver">
+    <h3><span data-ng-bind="challenge | capitalize"></span> challenge is over!</h3>
+    <h5><span>{{ score }}</span>&nbsp;Math Coins earned!</h5>
+    <button ng-click="reset()" class="btn btn-success btn-lg">Play Again</button>
+    <br><br>
+    <a href="/#!/" class="btn btn-primary">Back to Dashboard</a>
+
+  </div>
+
+
+
+
+  <div ng-show="error">
+    <strong data-ng-bind="error"></strong>
+  </div>
+
+</div><!--end quiz area - started-->

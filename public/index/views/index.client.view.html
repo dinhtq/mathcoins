@@ -1,0 +1,60 @@
+<div id="index_container" ng-controller="IndexController" data-ng-init="findUserScore()">
+	<div id="header_site" class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4 col-md-4 col-lg-4">
+
+				<h5>Coins:
+					<span ng-show="authentication.user" data-ng-bind="userScore">0</span>
+					<span ng-show="!authentication.user">0</span>
+				</h5>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<a href="/"><h1 id="logo">MATH C<span class="gold_text">O</span>INS</h1></a>
+
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div data-ng-show="!authentication.user">
+					<a href="/signup" class="btn btn-primary btn-sm candalFont">Signup</a>
+					<a href="/signin" class="btn btn-success btn-sm  candalFont">Signin</a>
+				</div>
+				<div data-ng-show="authentication.user">
+					<p>Hi <span data-ng-bind="authentication.user.fullName"></span>&nbsp;
+						<a href="/signout" class="btn btn-primary btn-sm  candalFont">Signout</a>
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="index_body" class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<h3>Pick a challenge:</h3>
+			</div>
+		</div>
+		<div class="row centerText">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<a href="/#!/quiz/addition" class="btn_circle">Addition</a>
+				<a href="/#!/quiz/subtraction" class="btn_circle">Subtraction</a>
+				<a href="/#!/quiz/multiplication" class="btn_circle">Multiplication</a>
+				<a href="/#!/quiz/division" class="btn_circle">Division</a>
+			</div>
+		</div><!-- end row-->
+		<div id="index_banner_1" class="row">
+			<div class="col-sm-6 col-md-6 col-lg-6">
+				<div id="img3coolKids">
+
+				</div>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<p class="centerText">
+					A learning platform where kids can earn prizes by completing math related challenges.
+				</p>
+			</div>
+			<div class="col-sm-2 col-md-2 col-lg-2">
+			</div>
+
+		</div>
+	</div>
+</div>

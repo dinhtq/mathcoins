@@ -1,0 +1,37 @@
+<div id="index_container" ng-controller="IndexController" data-ng-init="findUserScore()">
+	<div id="header_site" class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4 col-md-4 col-lg-4">
+
+				<h5>Coins:
+					<span ng-show="authentication.user" data-ng-bind="userScore">0</span>
+					<span ng-show="!authentication.user">0</span>
+				</h5>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<a href="/"><h1 id="logo">MATH C<span class="gold_text">O</span>INS</h1></a>
+
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div data-ng-show="!authentication.user">
+					<a href="/signup" class="btn btn-primary btn-sm candalFont">Signup</a>
+					<a href="/signin" class="btn btn-success btn-sm  candalFont">Signin</a>
+				</div>
+				<div data-ng-show="authentication.user">
+					<p>Hi <span data-ng-bind="authentication.user.fullName"></span>&nbsp;
+						<a href="/signout" class="btn btn-primary btn-sm  candalFont">Signout</a>
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="challenge_body"  class="container">
+
+    <div data-ng-controller="QuizController">
+      <my-Quiz></my-Quiz>
+    </div><!--end QuizController namespace-->
+
+	</div>
+</div>

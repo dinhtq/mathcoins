@@ -1,0 +1,20 @@
+<section data-ng-controller="QuestionsController" data-ng-init="findOne()">
+  <h1 data-ng-bind="question.actualQuestion"></h1>
+  <ol>
+    <li data-ng-bind="question.choices.answer"></li>
+    <li data-ng-bind="question.choices.choice1"></li>
+    <li data-ng-bind="question.choices.choice2"></li>
+    <li data-ng-bind="question.choices.choice3"></li>
+  </ol>
+  <p data-ng-bind="question.choices.category"></p>
+  <div data-ng-show="authentication.user._id == question.creator">
+    <a href="/#!/questions/{{ question._id }}/edit">Edit</a>
+    <a href="#" data-ng-click="delete();">delete</a>
+  </div>
+  <small>
+    <em>Posted on</em>
+    <em data-ng-bind="question.created | date: 'medium' "></em>
+    <em>by</em>
+    <em data-ng-bind="question.creator.fullName"></em>
+  </small>
+</section>

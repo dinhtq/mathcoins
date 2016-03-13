@@ -1,0 +1,29 @@
+<section data-ng-controller="QuestionsController">
+
+  <h1>Create a question</h1>
+
+  <form data-ng-submit="create()" novalidate role="form">
+    <div class="form-group">
+      <input type="text" data-ng-model="actualQuestion" class="form-control" placeholder="Question" required>
+    </div>
+    <div class="form-group">
+      <input type="text" data-ng-model="answer" class="form-control" placeholder="Answer" required>
+    </div>
+    <div class="form-group">
+      <input type="text" data-ng-model="choice1" class="form-control" placeholder="Choice 1" required>
+    </div>
+    <div class="form-group">
+      <input type="text" data-ng-model="choice2" class="form-control" placeholder="Choice 2" required>
+    </div>
+    <div class="form-group">
+      <input type="text" data-ng-model="choice3" class="form-control" placeholder="Choice 3" required>
+    </div>
+    <div class="form-group">
+      <input type="text" data-ng-model="category" class="form-control" placeholder="Category" required>
+    </div>
+    <div class="form-group">
+      <button type="submit"  class="btn btn-success">Submit</button>
+    </div>
+  </form>
+
+</section>

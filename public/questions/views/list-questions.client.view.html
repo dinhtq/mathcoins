@@ -1,0 +1,21 @@
+<section data-ng-controller="QuestionsController" data-ng-init="find()">
+  <h1>All Questions</h1>
+  <ul>
+    <li data-ng-repeat="question in questions">
+      <a data-ng-href="/#!/questions/{{ question._id }}" data-ng-bind="question.actualQuestion"></a>
+      <br>
+      <small data-ng-bind="question.created | date: 'medium' "></small>
+      <small>/</small>
+      <small data-ng-bind="question.creator.fullName"></small>
+      <ol>
+        <li data-ng-bind="question.choices.answer"></li>
+        <li data-ng-bind="question.choices.choice1"></li>
+        <li data-ng-bind="question.choices.choice2"></li>
+        <li data-ng-bind="question.choices.choice3"></li>
+      </ol>
+    </li>
+  </ul>
+  <div data-ng-hide="!questions || questions.length">
+    No questions yet, how about you <a href="/#!/questions/create">create</a> one?
+  </div>
+</section
